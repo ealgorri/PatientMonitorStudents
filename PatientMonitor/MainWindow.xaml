@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PatientMonitor"
+        xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="PatientMonitor.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="800">
+
+    <Grid>
+        <toolkit:Chart Title="Real-time ECG" Width="800" Height="400" VerticalAlignment="Top">
+            <toolkit:LineSeries x:Name="lineSeriesECG"
+                                        Title="ECG Channel1"
+                                        IndependentValueBinding="{Binding Key}"
+                                        DependentValueBinding="{Binding Value}">
+                <toolkit:LineSeries.IndependentAxis>
+                    <toolkit:LinearAxis Orientation="X" Title="Time" />
+                </toolkit:LineSeries.IndependentAxis>
+                <toolkit:LineSeries.DependentRangeAxis>
+                    <toolkit:LinearAxis Orientation="Y" Title="Value" />
+                </toolkit:LineSeries.DependentRangeAxis>
+            </toolkit:LineSeries>
+        </toolkit:Chart>
+        <GroupBox x:Name="ECGgroupBox" Header="ECG" Width="380" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,60" FontSize="16">
+            
+                <Slider Minimum="0" Maximum="10" Value="5" Margin="0,0,0,10" Height="20" Width="350" VerticalAlignment="Bottom"/>
+               
+        </GroupBox>
+        <GroupBox x:Name="PatientGroupBox" Header="Input Patient" Width="380" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="14,0,0,60" FontSize="16">
+            
+                <Button x:Name="buttonCreatePatient" Content="Create Patient" Width="120" Margin="0,20,0,0" Height="30"/>
+               
+        </GroupBox>
+        <Button x:Name="buttonParameter" Content="Start Parameters" HorizontalAlignment="Left" Margin="500,680,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button x:Name="buttonQuit" Content="Stop" HorizontalAlignment="Left" Margin="650,680,0,0" VerticalAlignment="Top" FontSize="16"/>
+    </Grid>
+</Window>
+
