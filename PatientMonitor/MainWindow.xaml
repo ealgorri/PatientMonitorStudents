@@ -24,15 +24,15 @@
         </toolkit:Chart>
         <GroupBox x:Name="ECGgroupBox" Header="ECG" Width="380" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,60" FontSize="16">
             
-                <Slider Minimum="0" Maximum="10" Value="5" Margin="0,0,0,10" Height="20" Width="350" VerticalAlignment="Bottom"/>
+                <Slider x:Name="sliderECG" Minimum="0" Maximum="10" Value="5" Margin="0,0,0,10" Height="20" Width="350" VerticalAlignment="Bottom" IsEnabled="False" IsEnabledChanged="Slider_IsEnabledChanged"/>
                
         </GroupBox>
         <GroupBox x:Name="PatientGroupBox" Header="Input Patient" Width="380" Height="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="14,0,0,60" FontSize="16">
             
-                <Button x:Name="buttonCreatePatient" Content="Create Patient" Width="120" Margin="0,20,0,0" Height="30"/>
+                <Button x:Name="buttonCreatePatient" Content="Create Patient" Width="120" Margin="0,20,0,0" Height="30" Click="buttonCreatePatient_Click"/>
                
         </GroupBox>
-        <Button x:Name="buttonParameter" Content="Start Parameters" HorizontalAlignment="Left" Margin="500,680,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button x:Name="buttonParameter" Content="Start Parameters" HorizontalAlignment="Left" Margin="500,680,0,0" VerticalAlignment="Top" FontSize="16" IsEnabled="False" Click="buttonParameter_Click"/>
         <Button x:Name="buttonQuit" Content="Stop" HorizontalAlignment="Left" Margin="650,680,0,0" VerticalAlignment="Top" FontSize="16"/>
     </Grid>
 </Window>

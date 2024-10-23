@@ -8,8 +8,11 @@ namespace PatientMonitor
 {
     class ECG
     {
-        public double amplitude = 0.0;
-        public double frequency = 0;
+        private double amplitude = 0.0;
+        private double frequency = 0;
+
+        public double Amplitude { get => amplitude; set => amplitude = value; }
+        public double Frequency { get => frequency; set => frequency = value; }
 
         public ECG(double amplitude, double frequency)
         {
